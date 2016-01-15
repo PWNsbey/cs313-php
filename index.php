@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<p class="page-header" id="page-header-id">Hello, OpenShift world.</p>
+	<p class="page-header" id="page-header-id">Hello, OpenShift world via PHP.</p>
 </body>
 
 </html>
