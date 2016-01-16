@@ -1,16 +1,38 @@
-* {
-  -webkit-transition: all 1s;
-}
-
 body {
 	background-color: #333333;
 }
 
-#body-div {
+.basic-content {
+	font-family: monospace;
+	color: orange;
+	margin: 10px;
+}
+
+#top-body-div {
 	background-color: #1e1e1e;
 	padding-left: 20%;
 	padding-right: 20%;
 	padding-bottom: 3%;
+}
+
+#sub-divs-container {
+	padding-top: 10px;
+	width: 90%;
+	margin: auto;
+}
+
+#left-sub-div {
+	visibility: hidden;
+	background-color: #1e1e1e;
+	width: 40%;
+	float: left;
+}
+
+#right-sub-div {
+	visibility: hidden;
+	background-color: #1e1e1e;
+	width: 40%;
+	float: right;
 }
 
 .page-header {
@@ -22,8 +44,8 @@ body {
 }
 
 .page-subheader {
-	font-family: sans-serif;
-	font-size: 2em;
+	font-family: monospace;
+	font-size: 3em;
 	font-weight: bold;
 	color: orange;
 	text-align: center;
