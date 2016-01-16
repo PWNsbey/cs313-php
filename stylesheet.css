@@ -8,6 +8,14 @@ body {
 
 .page-header {
 	font-family: sans-serif;
+	font-size: 4em;
+	font-weight: bold;
+	color: orange;
+	text-align: center;
+}
+
+.page-subheader {
+	font-family: sans-serif;
 	font-size: 2em;
 	font-weight: bold;
 	color: orange;
