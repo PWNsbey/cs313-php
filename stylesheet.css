@@ -1,11 +1,15 @@
+* {
+  -webkit-transition: all 1s;
+}
+
 body {
 	background-color: #333333;
 }
 
 .page-header {
 	font-family: sans-serif;
-	font-size: 5em;
+	font-size: 2em;
 	font-weight: bold;
-	color: blue;
+	color: orange;
 	text-align: center;
 }
