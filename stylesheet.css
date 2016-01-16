@@ -31,11 +31,12 @@ body {
 }
 
 #icon-div {
-	margin: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 #more-info-icon {
-	left: 41%
+	float: left;
 }
 
 #more-info-icon:hover {
@@ -49,7 +50,7 @@ body {
 }
 
 #homework-icon {
-	left: 5%
+	float: right;
 }
 
 #homework-icon:hover {
