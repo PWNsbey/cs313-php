@@ -30,6 +30,10 @@ body {
 	padding-bottom: 5%
 }
 
+#icon-div {
+	margin: auto;
+}
+
 #more-info-icon {
 	left: 41%
 }
