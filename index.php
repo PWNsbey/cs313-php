@@ -19,7 +19,7 @@
 					<p class="basic-content">Usually go by Jake. Professional programmer and part-time Jedi.</p>
 				</div>
 				<div id="right-sub-div">
-					<p class="basic-content">*under construction*</p>
+					<a href="php survey/phpSurvey.php">PHP Survey</a>
 				</div>
 			</div>
 	</body>

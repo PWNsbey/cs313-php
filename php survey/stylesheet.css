@@ -1,0 +1,10 @@
+body {
+	background-color: #333333;
+	font-family: monospace;
+	color: orange;
+}
+
+.segmentedParagraph {
+	background-color: #1e1e1e;
+	padding: 1%;
+}
