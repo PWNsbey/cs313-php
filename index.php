@@ -20,7 +20,7 @@
 				</div>
 				<div id="right-sub-div">
 					<a href="php survey/phpSurvey.php">PHP Survey</a><br>
-					<a href="station_game/station_gameLogin">Station_Game</a>
+					<a href="station_game/station_gameLogin.php">Station_Game</a>
 				</div>
 			</div>
 	</body>
