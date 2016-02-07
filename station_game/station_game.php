@@ -39,7 +39,7 @@
 					Ice: <?php echo $result['ice']; ?>
 				</td>
 				<td>
-					<b><a href="employeesindex.php">EMPLOYEES</a></b><br>
+					<b><a href="employeesIndex.php">EMPLOYEES</a></b><br>
 					<?php
 						$sqlQuery = "SELECT name FROM employees AS e JOIN stations AS s ON e.station_id = s.user_id WHERE s.username='$username'";
 						foreach ($db->query($sqlQuery) as $row)
