@@ -7,7 +7,7 @@
 		exit();
 	}
 
-	require("dbConnecter.php");
+	require("../dbConnecter.php");
 	$db = loadDatabase();
 
 	$username = $_SESSION["username"];

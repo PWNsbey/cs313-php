@@ -6,6 +6,10 @@
 		header("Location: station_gameLogin.php");
 		exit();
 	}
+	if (!isset($_SESSION["justLoggedIn"]))
+	{
+		$_SESSION["justLoggedIn"] = True;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +24,11 @@
 	</head>
 	<body>
 		<?php
-			$_SESSION["username"] = $_POST["username"];
+			if ($_SESSION["isNewUser"] == False && $_SESSION["justLoggedIn"])
+			{
+				$_SESSION["username"] = $_POST["username"];
+				$_SESSION["justLoggedIn"] = False;
+			}
 			$username = $_SESSION["username"];
 
 			$sqlQuery = "SELECT * FROM stations WHERE username='$username' LIMIT 1";
@@ -39,24 +47,27 @@
 					Ice: <?php echo $result['ice']; ?>
 				</td>
 				<td>
-					<b><a href="employeesIndex.php">EMPLOYEES</a></b><br>
+					<b><a href="employeeStuffs\myEmployeesIndex.php">EMPLOYEES</a></b><br>
 					<?php
 						$sqlQuery = "SELECT name FROM employees AS e JOIN stations AS s ON e.station_id = s.user_id WHERE s.username='$username'";
 						foreach ($db->query($sqlQuery) as $row)
 						{
-							echo $row['name'];
+							echo $row['name'] . "<br>";
 						}
 					?>
+					<br><a href="employeeStuffs\hireEmployees.php">hire more employees</a>
 				</td>
+
 				<td>
-					<b><a href="shipsIndex.php">SHIPS</a></b><br>
+					<b><a href="shipStuffs\shipsIndex.php">SHIPS</a></b><br>
 					<?php
 						$sqlQuery = "SELECT shipname FROM ships AS s JOIN stations AS u ON s.station_id = u.user_id WHERE u.username='$username'";
 						foreach ($db->query($sqlQuery) as $row)
 						{
-							echo $row['shipname'];
+							echo $row['shipname'] . "<br>";
 						}
 					?>
+					<br><a href="shipStuffs\buildShips.php">build more ships</a>
 				</td>
 			</tr>
 		</table>
