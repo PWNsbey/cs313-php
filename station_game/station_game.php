@@ -10,6 +10,7 @@
 	{
 		$_SESSION["justLoggedIn"] = True;
 	}
+	$_SESSION["hasLoggedin"] = True;
 ?>
 
 <!DOCTYPE html>
@@ -35,42 +36,42 @@
 			$result = $db->query($sqlQuery)->fetch(PDO::FETCH_ASSOC);
 		?>
 
-		<br>Welcome back to <b><?php echo $result['stationname'] ?></b>, <?php echo $result['username']; ?><br><br>
+		<div id="mainScreen">
+			<h2>Welcome back to <b><?php echo $result['stationname'] ?></b>, <?php echo $result['username']; ?></h2><br>
+			<table align="center">
+				<tr>
+					<td>
+						<b>STATION RESOURCES</b><br>
+						Credits: <?php echo $result['credits']; ?><br>
+						Iron: <?php echo $result['iron']; ?><br>
+						Helium-3: <?php echo $result['heliumthree']; ?><br>
+						Ice: <?php echo $result['ice']; ?>
+					</td>
+					<td>
+						<b><a href="employeeStuffs\myEmployeesIndex.php">EMPLOYEES</a></b><br>
+						<?php
+							$sqlQuery = "SELECT name FROM employees AS e JOIN stations AS s ON e.station_id = s.user_id WHERE s.username='$username'";
+							foreach ($db->query($sqlQuery) as $row)
+							{
+								echo $row['name'] . "<br>";
+							}
+						?>
+						<br><a href="employeeStuffs\hireEmployees.php">hire more employees</a>
+					</td>
 
-		<table>
-			<tr>
-				<td>
-					<b>STATION RESOURCES</b><br>
-					Credits: <?php echo $result['credits']; ?><br>
-					Iron: <?php echo $result['iron']; ?><br>
-					Helium-3: <?php echo $result['heliumthree']; ?><br>
-					Ice: <?php echo $result['ice']; ?>
-				</td>
-				<td>
-					<b><a href="employeeStuffs\myEmployeesIndex.php">EMPLOYEES</a></b><br>
-					<?php
-						$sqlQuery = "SELECT name FROM employees AS e JOIN stations AS s ON e.station_id = s.user_id WHERE s.username='$username'";
-						foreach ($db->query($sqlQuery) as $row)
-						{
-							echo $row['name'] . "<br>";
-						}
-					?>
-					<br><a href="employeeStuffs\hireEmployees.php">hire more employees</a>
-				</td>
-
-				<td>
-					<b><a href="shipStuffs\shipsIndex.php">SHIPS</a></b><br>
-					<?php
-						$sqlQuery = "SELECT shipname FROM ships AS s JOIN stations AS u ON s.station_id = u.user_id WHERE u.username='$username'";
-						foreach ($db->query($sqlQuery) as $row)
-						{
-							echo $row['shipname'] . "<br>";
-						}
-					?>
-					<br><a href="shipStuffs\buildShips.php">build more ships</a>
-				</td>
-			</tr>
-		</table>
-
+					<td>
+						<b><a href="shipStuffs\shipsIndex.php">SHIPS</a></b><br>
+						<?php
+							$sqlQuery = "SELECT shipname FROM ships AS s JOIN stations AS u ON s.station_id = u.user_id WHERE u.username='$username'";
+							foreach ($db->query($sqlQuery) as $row)
+							{
+								echo $row['shipname'] . "<br>";
+							}
+						?>
+						<br><a href="shipStuffs\buildShips.php">build more ships</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</body>
 </html>

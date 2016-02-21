@@ -3,7 +3,7 @@
 
 	if (!isset($_SESSION["hasLoggedin"]))
 	{
-		$_SESSION["hasLoggedin"] = True;
+		$_SESSION["hasLoggedin"] = False;
 		$_SESSION["isNewUser"]   = False;
 	}
 	else
@@ -16,24 +16,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
 	</head>
 	<body>
-		<form action="station_game.php" method="post">
-			<b>Returning user?</b><br>
-			Username:<br>
-			<input type="text" name="username"><br>
-			<input type="submit" value="Submit">
-		</form>
-		<br>
-		<br>
-		<form action="new_user.php" method="post">
-			<b>New user?</b><br>
-			New Username:<br>
-			<input type="text" name="username"><br>
-			Station name:<br>
-			<input type="text" name="stationname"><br>
-			<input type="submit" value="Submit">
-		</form>
+		<div id="loginForm">
+			<form action="station_game.php" method="post">
+				<b>Returning user?</b><br><br>
+				Username:<br>
+				<input type="text" name="username"><br><br>
+				<input type="submit" value="Submit">
+			</form>
+			<br>
+			<br>
+			<br>
+			<br>
+			<form action="new_user.php" method="post">
+				<b>New user?</b><br><br>
+				New Username:<br>
+				<input type="text" name="username"><br><br>
+				Station name:<br>
+				<input type="text" name="stationname"><br><br>
+				<input type="submit" value="Submit"><br>
+			</form>
+		</div>
 	</body>
 </html>

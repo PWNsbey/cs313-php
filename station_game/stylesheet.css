@@ -1,0 +1,21 @@
+body {
+	background-color: #333333;
+	font-family: monospace;
+	color: orange;
+}
+
+a {
+	color: orange;
+}
+
+#loginForm {
+	text-align: center;
+	background-color: #1e1e1e;
+	padding: 20px;
+}
+
+#mainScreen {
+	background-color: #1e1e1e;
+	padding: 10%;
+	text-align: center;
+	align: center;
